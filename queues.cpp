@@ -5,7 +5,7 @@ class Queue {
 private:
     static const int max = 5;
     int FRONT, REAR;
-    int queus_array[5]; 
+    int queues_array[5]; 
 public:
     Queus() 
     {
@@ -51,7 +51,7 @@ public:
             return;                           
         }
 
-         cout << "\nthe element deleted from the queue is: " << queus_array[FRONT] << "\n";
+         cout << "\nthe element deleted from the queue is: " << queues_array[FRONT] << "\n";
 
         // cek apakah antrian hanya memiliki satu elemen
         if (FRONT == REAR) {
@@ -73,6 +73,46 @@ public:
     {
         int FRONT_position = FRONT;
         int REAR_position = REAR;
-    }
+    
 
+        // cek apakah antrian kosong
+        if (FRONT == -1) 
+        {
+            cout << "Queue is empty\n" << endl;
+            return;
+        }
+
+        cout << "\nElements in the queue are...\n";
+    
+        //jika FRONT_position <= REAR_position, iterasi dari FRONT hingga REAR
+        if (FRONT_position <= REAR_position)
+        {
+            while (FRONT_position <= REAR_position) 
+            {
+                cout << queus_array[FRONT_position] << " ";
+                FRONT_position++;
+            }
+
+            cout << endl;
+        }
+        else
+        {
+            //jika FRONT_position > REAR_position, iterasi dari FRONT hingga akhir array
+            while (FRONT_position <= max - 1) 
+            {
+                cout << queus_array[FRONT_position] << " ";
+                FRONT_position++;
+            }
+
+            FRONT_position = 0; //kembali ke awal array
+
+            while (FRONT_position <= REAR_position) 
+            {
+                cout << queus_array[FRONT_position] << " ";
+                FRONT_position++;
+            }
+
+            cout << endl;
+        }
+    }
 };
