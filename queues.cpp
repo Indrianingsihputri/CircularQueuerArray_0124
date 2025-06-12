@@ -18,6 +18,12 @@ public:
         cout << "Enter a number: ";
         cin >> num;
         cout << endl;
+        
+        //1. cek apakah queue penuh
+        if ((FRONT == 0 && REAR == max - 1)||(FRONT == REAR + 1)) {
+            cout << "Queue is full!" << endl; //1.a
+            return;                           //1.b
+        }
     }
 
 };
