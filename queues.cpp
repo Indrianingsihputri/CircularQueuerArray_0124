@@ -31,7 +31,12 @@ public:
             REAR = 0;  //2.b
         }
         else
-        
+        {
+            if (REAR == max - 1)
+                REAR = 0; //2.c
+            else
+                REAR = REAR + 1; //2.d
+        }
     }
 
 };
